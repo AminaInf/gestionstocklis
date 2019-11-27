@@ -1,0 +1,100 @@
+#body{
+    background-image: url("../images/per.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+#bod{
+    background-image: url("../images/kirene.png");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: left;
+    background-position-y: 120px;
+
+}
+#ma{
+    background-image: url("../images/log3.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: right;
+    background-position-y: 120px;
+
+}
+#bo{
+    background-image: url("../images/lis.png");
+    background-repeat: no-repeat;
+   background-size: 100%;
+    background-position: center;
+    background-position-x: 0px;
+    background-position-y: 0px;
+
+}
+#lis{
+    height: 100px;
+    width: 150px;
+}
+#log{
+    height: 100px;
+    width: 220px;
+}
+#nav{
+    background-color:#35856e;
+}
+#nv{
+    background-color:#35856e;
+}
+#a{
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+#main{
+    background-color:#35856e ;
+    color: white;
+    font-size: 15px;
+}
+#ar{
+    background: #0066b3;
+    color: white;
+    border: solid 9px #0066b3;
+    border-radius: 3px 3px 3px 3px;
+}
+#mai{
+    background-image: url("../images/per.png");
+    color: black;
+    font-size: 16px;
+}
+#art{
+    background-image: url("../images/puce.jpg");
+    background-size: 20%;
+    color: black;
+    font-size: 16px;
+}
+#btn{
+    background-color: #9e0807;
+    border: solid 1px #1d8368;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+#hd{
+    background-color: white;
+    color: #1d8368;
+    font-size: 20px;
+}
+#hd1{
+    background-color: #35856e;
+    color: white;
+    font-size: 20px;
+}
+#md{
+    color: white;
+    font-size: 15px;
+}
+#ad{
+
+}
+#navbarDropdown{
+    color: white;
+    font-size: 18px;
+}
