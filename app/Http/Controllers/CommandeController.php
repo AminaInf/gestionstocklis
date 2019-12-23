@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Commande;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommandeController extends Controller
 {
@@ -12,7 +13,7 @@ class CommandeController extends Controller
     {
 
         $articles = Article::all();
-        return view('commande.add',['article' => $articles]);
+        return view('commande.add',['articles' => $articles]);
     }
     public function getAll()
     {
@@ -29,6 +30,7 @@ class CommandeController extends Controller
     public function update(Request $request)
     {
         $commande = Commande::find($request->id);
+        $commande->user_id= Auth::id();
         $commande->articles_id=$request->articles_id;
         $commande->quantite=$request->quantite;
         $commande->date=$request->date;
@@ -47,6 +49,7 @@ class CommandeController extends Controller
     {
         $commande = new Commande();
         $commande->articles_id=$request->articles_id;
+        $commande->user_id= Auth::id();
         $commande->quantite=$request->quantite;
         $commande->date=$request->date;
         $result=$commande->save();

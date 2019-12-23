@@ -1,16 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Article;
 use App\Vente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VenteController extends Controller
 {
     public function add()
     {
 
-        return view('vente.add');
+        $articles = Article::all();
+        return view('vente.add',['articles' => $articles]);
+
+
     }
     public function getAll()
     {
@@ -27,6 +31,7 @@ class VenteController extends Controller
     public function update(Request $request)
     {
         $vente = Vente::find($request->id);
+        $vente->user_id= Auth::id();
         $vente->articles_id=$request->articles_id;
         $vente->quantite=$request->quantite;
         $vente->date=$request->date;
@@ -45,6 +50,7 @@ class VenteController extends Controller
     {
         $vente = new Vente();
         $vente->articles_id=$request->articles_id;
+        $vente->user_id= Auth::id();
         $vente->quantite=$request->quantite;
         $vente->date=$request->date;
         $result=$vente->save();

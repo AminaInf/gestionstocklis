@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Article;
+use App\Lis;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -28,7 +29,7 @@ class ArticleController extends Controller
     {
         $article = Article::find($request->id);
         $article->libelle=$request->libelle;
-        $article->agents_id=$request->agents_id;
+        $article->user_id= Auth::id();
         $article->lis_id=$request->lis_id;
         $result=$article->save();
         return redirect('/article/getAll/');
@@ -44,9 +45,9 @@ class ArticleController extends Controller
     public function persist(Request $request)
     {
         $article = new Article();
-        $article->libelle=$request->libelle;
-        $article->agents_id=$request->agents_id;
+        $article->user_id= Auth::id();
         $article->lis_id=$request->lis_id;
+        $article->libelle=$request->libelle;
         $result=$article->save();
         return view('article.add', ['confirmation'=> $result]);
     }

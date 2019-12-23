@@ -87,8 +87,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('addcommande') }}">Ajout</a>
-                                <a class="dropdown-item" href="{{ route('getAllcommande') }}">Produits vendus</a>
+                                <a class="dropdown-item" href="{{ route('addvente') }}">Ajout</a>
+                                <a class="dropdown-item" href="{{ route('getAllvente') }}">Produits vendus</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -114,32 +114,47 @@
         </div>
     </nav>
 
+
     <main class="py-4">
         <div class="container" id="ad">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header" id="hd">Formulaire d'enregistrement des articles</div>
+                        <div class="card-header" id="hd">Formulaire d'enregistrement des Vente</div>
 
                         <div class="card-body" id="art">
                             @if(isset($confirmation))
                                 @if($confirmation==1)
-                                    <div class="alert alert-success">Article ajouté</div>
+                                    <div class="alert alert-success">Vente ajouté</div>
                                 @else
-                                    <div class="alert alert-danger">Article non ajouté</div>
+                                    <div class="alert alert-danger">Vente non ajouté</div>
                                 @endif
                             @endif
-                            <form method="POST" action="/article/persist">
-                                @csrf
-                                <div class="form-group">
-                                    <label class="control-label">Libelle</label>
-                                    <input class="form-control" type="text" name="libelle" id="libelle">
-                                </div>
-                                                                <div class="form-group">
-                                    <input class="btn btn-success" type="submit" name="envoyer" id="envoyer" value="Envoyer">
-                                    <input class="btn btn-danger" type="reset" name="annuler" id="annuler" value="Annuler">
-                                </div>
-                            </form>
+                                <form method="POST" action="/vente/persist">
+                                    @csrf
+                                    <div class="form-group">
+
+                                        <label class="control-label" for="articles_id">Choisissez un Article</label>
+                                        <select class="form-control"  name="articles_id" id="articles_id">
+                                            <option value="0">Faites un choix</option>
+                                            @foreach($articles as $article)
+                                                <option value="{{$article->id}}">{{$article->libelle}} </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Quantite de la Vente</label>
+                                        <input class="form-control" type="number" name="quantite" id="quantite">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Date de la Vente</label>
+                                        <input class="form-control" type="date" name="date" id="libelle">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="btn btn-success" type="submit" name="envoyer" id="envoyer" value="Envoyer">
+                                        <input class="btn btn-danger" type="reset" name="annuler" id="annuler" value="Annuler">
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>

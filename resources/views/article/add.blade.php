@@ -87,8 +87,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('addcommande') }}">Ajout</a>
-                                <a class="dropdown-item" href="{{ route('getAllcommande') }}">Produits vendus</a>
+                                <a class="dropdown-item" href="{{ route('addvente') }}">Ajout</a>
+                                <a class="dropdown-item" href="{{ route('getAllvente') }}">Produits vendus</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -129,7 +129,7 @@
                                     <div class="alert alert-danger">Article non ajouté</div>
                                 @endif
                             @endif
-                            <form method="POST" action="/article/persist">
+                            <form method="POST" action="/article/persist/">
                                 @csrf
                                 <div class="form-group">
                                     <label class="control-label">Libelle</label>

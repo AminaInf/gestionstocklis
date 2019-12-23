@@ -87,8 +87,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('addcommande') }}">Ajout</a>
-                                <a class="dropdown-item" href="{{ route('getAllcommande') }}">Produits vendus</a>
+                                <a class="dropdown-item" href="{{ route('addvente') }}">Ajout</a>
+                                <a class="dropdown-item" href="{{ route('getAllvente') }}">Produits vendus</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -114,7 +114,8 @@
         </div>
     </nav>
 
-    <main class="py-4">
+
+    <main class="py-4" id="maine">
         <div class="container" id="ad">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -143,7 +144,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Quantite de la commande</label>
-                                    <input class="form-control" type="number" name="quantie" id="quantite">
+                                    <input class="form-control" type="number" name="quantite" id="quantite">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Date de la commande</label>
@@ -159,6 +160,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 </div>
 </body>

@@ -17,10 +17,11 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')
-                ->references('id')->on('users');
-            $table->integer('lis_id')->unsigned();
+                  ->references('id')->on('users');
+            $table->integer('lis_id');
             $table->foreign('lis_id')
-                ->references('id')->on('lis');
+                  ->references('id')->on('lis');
+
             $table->string('libelle');
             $table->timestamps();
         });
